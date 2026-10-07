@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+
+  const [viewpassword,setViewpassword]=useState(false)
+
+
+
+ 
+
+
+
+
   return (
     <React.Fragment>
       <div className="container">
@@ -54,7 +64,7 @@ const Register = () => {
             {/* Password Field with Toggle */}
             <div className="input-group">
               <input
-                type="password"
+                type={viewpassword?"text":"password"}
                 id="password"
                 placeholder=" "
                 required=""
@@ -63,7 +73,7 @@ const Register = () => {
               <button
                 type="button"
                 className="toggle-password"
-                onclick="togglePassword('password', this)"
+                onClick={()=>setViewpassword((prev)=>!prev)}
               >
                 {/* Eye Open Icon */}
                 <svg viewBox="0 0 24 24">
@@ -87,7 +97,7 @@ const Register = () => {
               <button
                 type="button"
                 className="toggle-password"
-                onclick="togglePassword('confirmPassword', this)"
+                
               >
                 {/* Eye Open Icon */}
                 <svg viewBox="0 0 24 24">
